@@ -1,4 +1,4 @@
-import test
+import src.test as test
 
 if __name__ == '__main__':
     input = input('Enter the test type (custom/default): ')
