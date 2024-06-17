@@ -8,6 +8,12 @@ class CSP_knights:
     def __init__(self, k:int, n:int):
         if k > n*n:
             raise ValueError('Number of knights cannot be greater than the number of squares on the board')
+        elif k < 1:
+            raise ValueError('Number of knights must be at least 1')
+        elif n % 2 == 0 and k > n*n/2 and n > 7:
+            raise ValueError('It\'s not possible to place that many knights on the board')
+        elif n % 2 != 0 and k > (n*n+1)/2 and n > 7:
+            raise ValueError('It\'s not possible to place that many knights on the board')
         self.k = k
         self.n = n
         # Variables: Each cell (i, j) can be either 0 or 1 (no knight or knight)
@@ -67,9 +73,9 @@ class Solver:
 
 
     def backtrack(self, csp: CSP_knights, assignment):
-        # this counter keeps track of how many backtrack() functions are called
+        """ # this counter keeps track of how many backtrack() functions are called
         self.count += 1
-        print("trying...", self.count)
+        print("trying...", self.count) """
         # this block is useful when all knights have already been assigned
         # there's no more need to backtrack, all other cells are empty 
         if sum(assignment.values()) == csp.k:
@@ -121,7 +127,7 @@ class Solver:
 
 
 class Drawer:
-    def draw_chessboard(solution, n):
+    def draw_chessboard(self, solution, n):
         # Create a figure and axis
         fig, ax = plt.subplots()
 
@@ -149,4 +155,6 @@ class Drawer:
         plt.gca().invert_yaxis()  # Invert y axis to match the traditional chessboard view
         plt.xticks([])
         plt.yticks([])
+        plt.title(f'Implementation 2: {len([val for val in solution.values() if val == 1])} knights on a {n}x{n} board')
         plt.show()
+

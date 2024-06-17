@@ -2,7 +2,16 @@ from collections import deque
 from matplotlib import patches, pyplot as plt
 
 class CSP_Knights:
-    def __init__(self, k, n):
+    def __init__(self, k: int, n: int):
+        # Check if the input is valid
+        if k > n*n:
+            raise ValueError('Number of knights cannot be greater than the number of squares on the board')
+        elif k < 1:
+            raise ValueError('Number of knights must be at least 1')
+        elif n % 2 == 0 and k > n*n/2:
+            raise ValueError('It\'s not possible to place that many knights on the board')
+        elif n % 2 != 0 and k > (n*n+1)/2:
+            raise ValueError('It\'s not possible to place that many knights on the board')
         # Number of knights
         self.k = k
         # Size of the chessboard
@@ -74,8 +83,8 @@ class Solver:
         return sorted(csp.D[var], key=count_conflicts)
     
     def backtrack(self, csp:CSP_Knights, assignment):
-        self.count += 1
-        print("Try #", self.count)
+        """ self.count += 1
+        print("Try #", self.count) """
         # if all knights have been assigned, return the solution
         if len(assignment) == csp.k:
             return assignment
@@ -138,4 +147,5 @@ class Drawer:
         plt.gca().invert_yaxis()  # Invert y axis to match the traditional chessboard view
         plt.xticks([])
         plt.yticks([])
+        plt.title(f'Implementation 1: {len(solution)} knights on a {n}x{n} board')
         plt.show()
