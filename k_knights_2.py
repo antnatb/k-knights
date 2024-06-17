@@ -119,6 +119,7 @@ class Solver:
                     return False
         return True
 
+
 class Drawer:
     def draw_chessboard(solution, n):
         # Create a figure and axis
@@ -149,14 +150,3 @@ class Drawer:
         plt.xticks([])
         plt.yticks([])
         plt.show()
-
-
-#test
-csp = CSP_knights(61, 11)
-solver = Solver()
-solution = solver.solve(csp)
-if solution:
-    drawer = Drawer
-    drawer.draw_chessboard(solution, csp.n)
-else:
-    print ("No solution")
