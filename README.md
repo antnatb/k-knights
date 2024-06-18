@@ -9,18 +9,15 @@ the solution on a chessboard.
 ### File Descriptions
 
 1. **`k_knights_1.py`**:
-    - This file contains the first implementation of the CSP solver for the knights problem.
+    - This file contains the first implementation of the CSP solver for the knights problem, where the variables are the knights.
     - Classes:
         - `CSP_Knights`: Represents the CSP for placing knights on the board. It defines the variables, domains, and constraints.
-        - `Solver`: Implements the backtracking algorithm with Minimum Remaining Values (MRV) heuristic and Arc Consistency (AC3) algorithm.
+        - `Solver`: Implements the backtracking algorithm.
         - `Drawer`: Provides methods for visualizing the chessboard and the solution.
 
 2. **`k_knights_2.py`**:
-    - This file contains the second implementation of the CSP solver for the knights problem.
-    - Classes:
-        - `CSP_knights`: Similar to `CSP_Knights` but with a different approach for defining variables and constraints.
-        - `Solver`: Implements the backtracking algorithm with MRV heuristic and AC3 algorithm.
-        - `Drawer`: Provides methods for visualizing the chessboard and the solution.
+    - This file contains the second implementation of the CSP solver for the knights problem, where the variables are the squares of the chessboard.
+    The classes have the same names and functionality as the first implementation
 
 3. **`main.py`**:
     - The main script for running tests on the two implementations.
