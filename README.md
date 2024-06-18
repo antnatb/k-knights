@@ -2,9 +2,10 @@
 
 ### Overview
 
-This repository contains two implementations for solving the problem of placing \( k \) knights on an \( n \times n \) chessboard such that no two knights threaten each other.
+This repository contains two implementations for solving the problem of placing k knights on an  n x n chessboard such that no two knights threaten each other.
 The implementations utilize Constraint Satisfaction Problems (CSP) and backtracking algorithms to find a solution. Additionally, the repository provides functionality for visualizing 
-the solution on a chessboard.
+the solution on a chessboard. 
+A PDF report is present to better understand the problem and analyze the results.
 
 ### File Descriptions
 
