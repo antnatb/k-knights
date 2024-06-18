@@ -2,3 +2,6 @@ __pycache__/k_knights_1.cpython-312.pyc
 __pycache__/k_knights_2.cpython-312.pyc
 __pycache__/test.cpython-312.pyc
 report.tex
+images/im1_k16_n6.pgf
+images/im2_k16_n6.pgf
+.gitignore

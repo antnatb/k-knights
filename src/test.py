@@ -14,16 +14,22 @@ def custom_test():
             csp = k1.CSP_Knights(k, n)
             solver = k1.Solver()
             drawer = k1.Drawer()
+            start = time.time()
             solution = solver.solve(csp)
+            end = time.time()
+            print('Time taken:', round(end-start, 3), 'seconds')
             if solution:
                 drawer.draw_chessboard(solution, n)
             else:
                 print('No solution found')
         elif impl == '2':
-            csp = k2.CSP_knights(k, n)
             solver = k2.Solver()
             drawer = k2.Drawer()
+            csp = k2.CSP_knights(k, n)
+            start = time.time()
             solution = solver.solve(csp)
+            end = time.time()
+            print('Time taken:', round(end-start, 3), 'seconds')
             if solution:
                 drawer.draw_chessboard(solution, n)
             else:
@@ -37,10 +43,15 @@ def default_test():
     print('Running default test...')
     print('This could take a while...')
     test(16, 6)
-    test(20, 7)
-    test(24, 8)
-    test(32, 9)
-    test(40, 10)
+    test(25, 7)
+    test(26, 8)
+    test(41, 9)
+    test(42, 10)
+    test(51, 11)
+    test(62, 12)
+    test(72, 13)
+    test(87, 14)
+    test(98, 15)
 
 def test(k, n):
     measurements = 3
